@@ -19,30 +19,33 @@ function myHitOther(my1,my2){
 </script>
 
 
+
 <h1 align=center style="background:#999; margin:-9">T3A07-Code-Nima.html</h1>
 <br>
 What we are going to do is take CSS positioning and Forms button and make something that moves across the screen.<br>
 
-<input type=button value="Click to see motion on span 1" onClick="{
-	//alert(document.getElementById('mySpan01').style.left)
+<input type=button value="Move to see motion on span 1" onClick="{
 	document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 15
 	if(myHitOther('mySpan01', 'mySpan02')){
 		alert('hit')
 	}
 }">
 
-<input type=button value="Click to see motion on span 2" onClick="{
-	//alert(document.getElementById('mySpan02').style.left)
-	document.getElementById('mySpan02').style.top = parseInt(document.getElementById('mySpan02').style.top) + 15
+<input type=button value="Move to see motion on span 2" onClick="{
+	document.getElementById('mySpan02').style.top = parseInt(document.getElementById('mySpan01').style.top) + 15
+}">
 
-<input type=button value="Click to see motion on span 3" onClick="{
-	//alert(document.getElementById('mySpan03').style.left)
-	document.getElementById('mySpan03').style.top = parseInt(document.getElementById('mySpan03').style.top) + 15
+<input type=button value="Move to see motion on span 3" onClick="{
+	document.getElementById('mySpan03').style.left = parseInt(document.getElementById('mySpan01').style.left) + 15
+	document.getElementById('mySpan03').style.top = parseInt(document.getElementById('mySpan01').style.top) + 15
+}">
+
+<input type=button value="Move to see motion on span 4" onClick="{
+	document.getElementById('mySpan04').style.right = parseInt(document.getElementById('mySpan02').style.right) + 15
+}">
 
 
-
-
-<span id="mySpan01" style="position:absolute; left:200; top:150; width:45; height:30;">Span 1</span>
-<span id="mySpan02" style="position:absolute; left:200; top:200; width:45; height:30;">Span 2</span>
-<span id="mySpan03" style="position:absolute; left:200; top:250; width:45; height:30;">Span 3</span>
-<span id="mySpan04" style="position:absolute; left:200; top:300; width:45; height:30;">Span 4</span>
+<span id="mySpan01" style="position:absolute; left:200; top:150; width:45; height:20;">span 1</span>
+<span id="mySpan02" style="position:absolute; left:200; top:200; width:42; height:20;">span 2</span>
+<span id="mySpan03" style="position:absolute; left:200; top:250; width:45; height:30;">span 3</span>
+<span id="mySpan04" style="position:absolute; right:20px; left:200; top:300; width:45; height:30;">span 4</span>
