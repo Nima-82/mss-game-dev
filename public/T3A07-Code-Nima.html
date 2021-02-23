@@ -23,29 +23,82 @@ function myHitOther(my1,my2){
 <h1 align=center style="background:#999; margin:-9">T3A07-Code-Nima.html</h1>
 <br>
 What we are going to do is take CSS positioning and Forms button and make something that moves across the screen.<br>
+<table border=1 width=40%>
+<tr align=center>
+<th>Span 1</th>
 
-<input type=button value="Move to see motion on span 1" onClick="{
+<td>
+<input type=button value="&#8594" onClick="{
 	document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 15
 	if(myHitOther('mySpan01', 'mySpan02')){
 		alert('hit')
 	}
 }">
+</td>
 
-<input type=button value="Move to see motion on span 2" onClick="{
-	document.getElementById('mySpan02').style.top = parseInt(document.getElementById('mySpan01').style.top) + 15
+<td>
+<input type=button value="&#8595" onClick="{
+	document.getElementById('mySpan01').style.top = parseInt(document.getElementById('mySpan01').style.top) + 15
+	if(myHitOther('mySpan01', 'mySpan02')){
+		alert('hit')
+	}
 }">
-
-<input type=button value="Move to see motion on span 3" onClick="{
-	document.getElementById('mySpan03').style.left = parseInt(document.getElementById('mySpan01').style.left) + 15
-	document.getElementById('mySpan03').style.top = parseInt(document.getElementById('mySpan01').style.top) + 15
+</td>
+<td>
+<input type=button value="&#8592" onClick="{
+	document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 15
+	if(myHitOther('mySpan01', 'mySpan02')){
+		alert('hit')
+	}
 }">
+</td>
+<td>
+<input type=button value="&#8593" onClick="{
+	document.getElementById('mySpan01').style.top= parseInt(document.getElementById('mySpan01').style.top) - 15
+	if(myHitOther('mySpan01', 'mySpan02')){
+		alert('hit')
+	}
+}"> </td>
+</tr>
+<tr align=center>
+<th>Span 2</th>
+<td>
+<input type=button value="&#8594" onClick="{
+	document.getElementById('mySpan02').style.left = parseInt(document.getElementById('mySpan02').style.left) + 15
+	if(myHitOther('mySpan02', 'mySpan01')){
+		alert('hit')
+	}
 
-<input type=button value="Move to see motion on span 4" onClick="{
-	document.getElementById('mySpan04').style.right = parseInt(document.getElementById('mySpan02').style.right) + 15
 }">
+</td>
+<td>
+<input type=button value="&#8595" onClick="{
+	document.getElementById('mySpan02').style.top = parseInt(document.getElementById('mySpan02').style.top) + 15
+	if(myHitOther('mySpan02', 'mySpan01')){
+		alert('hit')
+	}
+}">
+</td>
+<td>
+<input type=button value="&#8592" onClick="{
+	document.getElementById('mySpan02').style.left = parseInt(document.getElementById('mySpan02').style.left) - 15
+	if(myHitOther('mySpan02', 'mySpan01')){
+		alert('hit')
+	}
 
+}">
+</td>
+<td>
+<input type=button value="&#8593" onClick="{
+	document.getElementById('mySpan02').style.top = parseInt(document.getElementById('mySpan02').style.top) - 15
+	if(myHitOther('mySpan02', 'mySpan01')){
+		alert('hit')
+	}
 
-<span id="mySpan01" style="position:absolute; left:200; top:150; width:45; height:20;">span 1</span>
-<span id="mySpan02" style="position:absolute; left:200; top:200; width:42; height:20;">span 2</span>
-<span id="mySpan03" style="position:absolute; left:200; top:250; width:45; height:30;">span 3</span>
-<span id="mySpan04" style="position:absolute; right:20px; left:200; top:300; width:45; height:30;">span 4</span>
+}">
+</td>
+</tr>
+</table>
+<span id="mySpan01" style="position:absolute; left:200; top:300; width:45; height:20;">span 1</span>
+<span id="mySpan02" style="position:absolute; left:200; top:400; width:45; height:20;">span 2</span>
+
