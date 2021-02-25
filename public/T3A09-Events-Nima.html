@@ -1,8 +1,10 @@
+
+
 <body onKeyDown="{
 	let myArrowKey = event.keyCode
 	let myAlphaKey = event.key
 
-	if (myArrowKey == 37) {
+	if (myArrowKey == '37') {
 		document.getElementById('mySpan01').innerHTML = 'Hi from onKeyDown left arrow pressed'
 	}
 
@@ -11,6 +13,7 @@
 		document.getElementById('mySpan01').innerHTML = 'Hi from onKeyDown d key pressed'
 	}
 }">
+
 
 <h1 align=center style="background:#999; margin:-9">T3A09-Events-Nima.html</h1>
 <br>
@@ -25,5 +28,42 @@ This is <b>bold</b> this isn't<br>
 This is <b onMouseOver="{
 	document.getElementById('mySpan01').innerHTML = 'Hi from mouseOver'
 }"> bold and onMouseOver </b> this isn't<br><br>
+<head>
 
 </body>
+<div id="myDiv01" style="background:red" onWheel="{
+	document.getElementById('myDiv01').style.fontSize = '35px'
+}">To activate onWheel event roll the mouse wheel up or down over this box</div>
+<br>
+<input id="myBo01" type=button value="click for normal size" onClick="{
+	document.getElementById('myDiv01').style.fontSize = '16px'
+}">
+<br>
+<br>
+move your mouse over this emoji<br>
+<img id="myImg01" src="file:///C:/Users/nimad/OneDrive/Desktop/unnamed.png" width="80" height="50" onMouseOver="{
+	document.getElementById('myImg01').style.height = '100px'
+	document.getElementById('myImg01').style.width = '160px'
+}"
+onMouseOut="{
+	document.getElementById('myImg01').style.height = '50px'
+	document.getElementById('myImg01').style.width = '80px'
+}">
+<br>
+<br>
+Your name: <input type="text" id="myText01" placeholder="write your name in lower case" onKeyup="{
+	document.getElementById('myText01').value = value.toUpperCase();
+}">
+<br><br>
+
+<p id="myP01" onMouseDown="{
+	document.getElementById('myP01').style.color = 'purple'
+}"
+onMouseUp="{
+	document.getElementById('myP01').style.color = 'red'
+}"
+onCopy="{
+	document.getElementById('mySpan01').innerHTML = 'You have copied this text'
+}"
+>If you click this page mouseDown event will activate, when mouse button is being pressed down over this text it will turn into purple and otherwise it's red.<br>
+And if you copy this text, then take a look at output span.</p>
