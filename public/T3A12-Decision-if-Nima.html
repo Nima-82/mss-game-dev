@@ -1,1 +1,63 @@
 <h1 align=center>T3A12-Decision-if-Nima.html</h1>
+
+<pre>
+|| means OR
+&& means AND
+! means NOT
+</pre>
+
+<input id="myText01" type=text value=3><br>
+<br>
+<input type=button value="Show x" onClick="{
+	x = document.getElementById('myText01').value
+	myTemp = '.................'
+	if (x >= 2){myTemp = 'Something'}
+	document.getElementById('mySpan01').innerHTML = myTemp
+}">
+<br>
+<span id="mySpan01">...</span>
+<br>
+<br>
+<br>
+<input id="myText02a" type=text value=3>
+<input id="myText02b" type=text value=-7><br>
+<br>
+<input type=button value="Decide X and Y" onClick="{
+	myX = document.getElementById('myText02a').value
+	myY = document.getElementById('myText02b').value
+	myTemp = '.................'
+	if (myX > 2 && myY < -4){
+		myTemp = 'X greater than 2 and Y less than -4'
+	} else {
+		myTemp = 'not'
+	}
+	document.getElementById('mySpan02').innerHTML = myTemp
+}">
+<br>
+<span id="mySpan02">...</span>
+<br>
+X = <input id="myText03a" type=text value=3>
+Y = <input id="myText03b" type=text value=6><br>
+<br>
+<input type=button value="Decide X and Y" onClick="{
+	myXa = document.getElementById('myText03a').value
+	myYa = document.getElementById('myText03b').value
+	myTemp = '.................'
+	if (myXa > 10 && myYa < -10){
+		myTemp = 'X greater than 10 and Y less than -10'
+	} 
+	if(myXa < 10 && myYa < -10) {
+		myTemp = 'X less than 10 and Y less than -10'
+	}
+	if(myXa > 10 && myYa > -10) {
+		myTemp = 'X greater than 10 and Y greater than -10'
+	}
+	if (myXa < 10 && myYa > -10) {
+		myTemp = 'X less than 10 and Y greater than -10'
+	}
+
+	document.getElementById('mySpan03').innerHTML = myTemp
+}">
+<br>
+<span id="mySpan03">...</span>
+
