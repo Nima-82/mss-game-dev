@@ -3,7 +3,8 @@
 
 Span output: <span id="mySpan01">...</span><br>
 
-Store this variable into x: <input id="myText01" type=text value=3>
+Store this variable into x: <input id="myText01" type=text value=3><br>
+Go in order
 <ol>
  
 <li> Run to see the value of x <input type=button value="x value" onClick="{
@@ -35,7 +36,11 @@ Store this variable into x: <input id="myText01" type=text value=3>
 	x = document.getElementById('myText01').value
 	document.getElementById('mySpan01').innerHTML = '((x + x)/x) * x = ' + xResult02
 }">
+<li>Run to see 2 * &#8730 x : <input type=button value="calculate" onClick="{
+	xResult03 =  2 * Math.sqrt(x)
+	x = document.getElementById('myText01').value
+	document.getElementById('mySpan01').innerHTML = '((x + x)/x) * x = ' + xResult03
+}">
 <li>More coming up
-<li>
 
 </ol>
