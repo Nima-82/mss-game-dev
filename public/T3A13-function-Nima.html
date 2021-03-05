@@ -1,0 +1,49 @@
+<h1 align=center>T3A13-Function-Nima</h1>
+
+<script>
+function myBasicFun(){
+	document.getElementById('mySpan01').innerHTML = "wow"
+}
+
+function myAdvancedFun(x, y){
+	return x*y
+}
+
+function calculate() {
+	myVal01 = document.getElementById('myText02').value 
+	myVal02 = document.getElementById('myText03').value
+	document.getElementById('mySpan02').innerHTML = myVal01 * myVal02
+}
+
+function convertCtoF() {
+	C = document.getElementById('myText04').value
+	F = document.getElementById('myText05').value
+	result = (C * 1.8) + 32
+	document.getElementById('myText05').innerHTML = result
+}
+</script>
+
+<input id="myText01" type=text value=3><br>
+<br>
+<input type=button value="Run function" onClick="myBasicFun()">
+<input type=button value="Advanced" onClick="{
+	document.getElementById('mySpan01').innerHTML = myAdvancedFun(7, 2)
+}">
+<br><br>
+<span id="mySpan01">........</span>
+<br><br>
+
+<input id="myText02" type=text value=5> x <input id="myText03" type=text value=6> <br>
+<br>
+<input type=button value="calculate" onClick="calculate()"><br>
+= <span id="mySpan02">.....</span><br>
+<br>
+
+Are you struggling to convert celcius to farenheit<br>
+
+Celcius= <input id="myText04" type=text value=5> Farenheit= <input id="myText05" type=text value=6> <br>
+<br>
+<input type=button value="calculate" onClick="convertCtoF()"><br>
+<br>
+<br>
+
