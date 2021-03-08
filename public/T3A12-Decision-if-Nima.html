@@ -1,5 +1,8 @@
-<h1 align=center>T3A12-Decision-if-Nima.html</h1>
 
+
+
+<h1 align=center style="background:#999; margin:-8px">T3A12-Decision-if-Nima.html</h1> <br>
+<body style="background:#1999">
 <pre>
 || means OR
 && means AND
@@ -36,9 +39,11 @@
 <br>
 <span id="mySpan02">...</span>
 <br>
-X = <input id="myText03a" type=text value=3>
-Y = <input id="myText03b" type=text value=6><br>
 <br>
+X = <input id="myText03a" type=number value=3>
+Y = <input id="myText03b" type=number value=6><br>
+<br>
+
 <input type=button value="Decide X and Y" onClick="{
 	myXa = document.getElementById('myText03a').value
 	myYa = document.getElementById('myText03b').value
@@ -55,9 +60,110 @@ Y = <input id="myText03b" type=text value=6><br>
 	if (myXa < 10 && myYa > -10) {
 		myTemp = 'X less than 10 and Y greater than -10'
 	}
-
+	if (myXa == 10 && myYa > -10) {
+		myTemp = 'X is equal to 10 and Y is greater than -10'
+	}
+	if (myXa == 10 && myYa < -10) {
+		myTemp = 'X is equal to 10 and Y is less than -10'
+	}
+	if (myXa < 10 && myYa == -10) {
+		myTemp = 'X is less than 10 and Y is equal to -10'
+	}
+	if (myXa > 10 && myYa == -10) {
+		myTemp = 'X is greater than 10 and Y is equal to -10'
+	}
+	if (myXa == 10 && myYa == -10) {
+		myTemp = 'X is equal to 10 and Y is equal to -10'
+	}
 	document.getElementById('mySpan03').innerHTML = myTemp
 }">
 <br>
-<span id="mySpan03">...</span>
+<span id="mySpan03" style="font-family:cursive">...</span>
+<br>
+<br>
+This spand shows diffrent texts in diffrent hours of a day <br>
+<input type=button value ="click to see tex" onClick="{
+	hours = new Date().getHours()
+	if (hours <= 11 && hours >= 5) {
+		document.getElementById('mySpan04').innerHTML = 'Good Morning'
+	}
+	if (hours >= 12 && hours <= 18) {
+		document.getElementById('mySpan04').innerHTML = 'Good Afternoon'
+	}
 
+	if (hours >= 19 && hours <= 4) {
+		document.getElementById('mySpan04').innerHTML = 'Good Night'
+	}
+}"><br>
+<span id="mySpan04" style="color:orange; background:Grey">....</span><br>
+<br>
+choose a number between 1 and 10<br>
+<input id="myNum1" type=number placeholder=5>
+<input type=button value="submit" onClick="{
+	myValue = document.getElementById('myNum1').value
+	myText = 'input is not valid'
+	if (myValue >= 0 && myValue <= 10) {
+		document.getElementById('mySpan05').innerHTML = 'input is valid'
+	}
+	else {
+		document.getElementById('mySpan05').innerHTML = myText
+	}
+}"><br>
+<span id="mySpan05" style="color:blue; font-family:cursive">....</span>
+<br>
+<br> 
+<input id=myNum02 type=number placeholder=2> x <input id=myNum03 type=number placeholder=2><br>
+<input type=button value="calculate" onClick="{
+	my01 = document.getElementById('myNum02').value
+	my02 = document.getElementById('myNum03').value
+	myResult01 = my01 * my02
+	document.getElementById('mySpan06').innerHTML = myResult01
+	if (myResult01 % 2 == 0) {
+		document.getElementById('mySpan06').innerHTML += ' and the number is even'
+	}
+	else {
+		document.getElementById('mySpan06').innerHTML += ' and the number is odd'
+	}
+}">
+<br>
+<span id="mySpan06" style="background:black; color:red">.....</span>
+<br>
+<br>
+
+select your favorite movie genre: <select id="mySelect01">
+<option value="null">--Choose--</option>
+<option value="action">Acion</option>
+<option value="drama">Drama</option>
+<option value="comody">Comody</option>
+<option value="horror">Horror</option>
+<option value="documentary">Documentary</option>
+</select><br>
+<input type=button value="submit" onClick="{
+	select = document.getElementById('mySelect01')
+	choice = select.value
+	myD = document.getElementById('mySpan07')
+	
+	if (choice == 'action') {
+	myD.innerHTML =  'You have choosen action genre'
+	}
+	if (choice == 'drama') {
+		myD.innerHTML = 'You have choosen drama genre'
+	}
+	if (choice == 'comody') {
+		myD.innerHTML = 'You have choosen comody genre'
+	}
+	if (choice == 'horror') {
+		myD.innerHTML = 'You have choosen horror genre'
+	}
+	if (choice == 'documentary') {
+		myD.innerHTML = 'You have choosen documentary genre'
+	}
+	if (choice == 'null') {
+		myD.innerHTML = 'please choose one of the genres'
+	}
+}">
+<br>
+<span id="mySpan07" style="background:yellow; font-family:Comic Sans MS, Comic Sans, cursive">....</span>
+
+
+</body>
