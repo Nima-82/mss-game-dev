@@ -1,0 +1,39 @@
+<h1 align=center>T3A14-for-loops-Nima</h1>
+
+store this input variable into x:
+<input id="myText01" type=number value=3><br><br>
+
+Show the amount of loops that is in the box: <input type=button value="show x" onClick="{
+	let myTemp01 = '';
+	x = document.getElementById('myText01').value
+	for(let myLoop01=1; myLoop01 <= x; myLoop01++){
+		myTemp01 += 'Loop Number: ' + myLoop01 + '<br>';
+	}
+	document.getElementById('mySpan01').innerHTML = myTemp01
+}"><br>
+
+Show the specific amount of loops: <input type=button value="show x" onClick="{
+	let myTemp01 = '';
+	for(let myLoop01=1; myLoop01 < 30; myLoop01++){
+		myTemp01 += 'Loop Number: ' + myLoop01 + '<br>';
+	}
+	document.getElementById('mySpan01').innerHTML = myTemp01
+}">
+<br>
+If you click this loop changing color every other number: <input type=button value="show x" onClick="{
+	let myTemp01 = '';
+	x = document.getElementById('myText01').value
+	for(let myLoop01=1; myLoop01 <= x; myLoop01++){
+		if (myLoop01 % 2 == 0) {
+		myTemp01 += 'Loop Number: ' + myLoop01 + '<br>' ;
+		}
+	else {
+		myTemp01 += 'whats up?' + myLoop01 + '<br>'
+	}
+	}
+	document.getElementById('mySpan01').innerHTML = myTemp01
+}"><br>
+
+<br><br>
+
+<span id="mySpan01">....</span>
