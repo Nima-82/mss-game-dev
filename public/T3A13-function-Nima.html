@@ -1,5 +1,41 @@
-<h1 align=center>T3A13-Function-Nima</h1>
+<body style="background:white">
+<h1 align=center style="background:#999; margin:-8px">T3A13-Function-Nima</h1><br>
+<style>
+.d1 {
+	border: 2px solid Blue;
+	outline: red solid 10px;
+	padding: 5px;
+ 	text-align: left;
+	width: 500;
+	background-color: #2001;
+}
 
+.d2 {
+	border: 2px solid red;
+	width: 500;
+	background-color: #1485;
+}
+
+.d3 {
+	border: 2px solid black;
+	padding: 8px;
+	background-color: #3956;
+	width: 500;
+}
+
+.d4 {
+	border: 2px solid orange;
+	padding: 8px;
+	background-color: #1175;
+	width: 500;
+}
+
+.d5 {
+	border: 2px solid blue;
+	width: 500;
+	background-color: #1375;
+}
+</style>
 <script>
 function myBasicFun(){
 	document.getElementById('mySpan01').innerHTML = "wow"
@@ -17,15 +53,64 @@ function calculate() {
 
 function convertCtoF() {
 	C = document.getElementById('myText04').value
-	F = document.getElementById('myText05').value
 	result = (C * 1.8) + 32
-	document.getElementById('myText05').innerHTML = result
+	document.getElementById('myText05').value = result
+}
+
+function convetrFtoC() {
+	F = document.getElementById('myText05').value
+	result01 = (F - 32) / 1.8
+	document.getElementById('myText04').value = result01
+}
+
+function lbKg() {
+	lb = document.getElementById('myText06').value
+	result03 = lb / 2.205
+	document.getElementById('myText07').value = result03
+}
+
+function kgLb() {
+	kg = document.getElementById('myText07').value
+	result04 = kg * 2.205
+	document.getElementById('myText06').value = result04
+}
+
+function ftM() {
+	ft = document.getElementById('myNum03').value
+	result05 = ft / 3.281
+	document.getElementById('myNum04').value = result05
+}
+
+function mFt() {
+	m = document.getElementById('myNum04').value
+	result06 = m * 3.281
+	document.getElementById('myNum03').value = result06
+}
+
+function BMI() {
+	kg = document.getElementById('myNum01').value 
+	m = document.getElementById('myNum02').value 
+	result02 = kg / (m * m)
+	document.getElementById('mySpan03').innerHTML = result02
+	myRespond01 = document.getElementById('mySpan04')
+	if (result02 >= 18.5 && result02 <= 25) {
+		myRespond01.innerHTML = 'your BMI falls within the <b>normal</b> range'
+	}
+	if (result02 < 18.5) {
+		myRespond01.innerHTML = 'your BMI falls within the <b>underweight</b> range'
+	}
+	if (result02 > 25 && result02 <= 30) {
+		myRespond01.innerHTML = 'your BMI falls within the <b>overweight</b> range'
+	}
+	if (result02 > 30) {
+		myRespond01.innerHTML = 'your BMI falls within the <b>obesity</b> range'
+	}
 }
 </script>
 
 <input id="myText01" type=text value=3><br>
 <br>
-<input type=button value="Run function" onClick="myBasicFun()">
+<input type=button value="Run function" onClick="myBasicFun()"><br><br>
 <input type=button value="Advanced" onClick="{
 	document.getElementById('mySpan01').innerHTML = myAdvancedFun(7, 2)
 }">
@@ -33,17 +118,46 @@ function convertCtoF() {
 <span id="mySpan01">........</span>
 <br><br>
 
+<div class="d1">
 <input id="myText02" type=text value=5> x <input id="myText03" type=text value=6> <br>
 <br>
 <input type=button value="calculate" onClick="calculate()"><br>
 = <span id="mySpan02">.....</span><br>
 <br>
+</div><br>
 
+<div class="d2">
 Are you struggling to convert celcius to farenheit<br>
 
 Celcius= <input id="myText04" type=text value=5> Farenheit= <input id="myText05" type=text value=6> <br>
 <br>
-<input type=button value="calculate" onClick="convertCtoF()"><br>
+<input type=button value="convert C to F" onClick="convertCtoF()">  <input type=button value="convert F to C" onClick="convetrFtoC()"><br>
 <br>
+</div><br>
+
+<div class="d3">
+Convert lb to kg or kg to lb<br>
+lb= <input type=number id="myText06"> kg= <input type=number id="myText07"><br><br>
+<input type=button value="convert lb to kg" onClick="lbKg()"> <input type=button value="convert kg to lb" onClick="kgLb()">
+</div>
 <br>
 
+<div class="d4">
+Convert ft to m or m to ft<br>
+ft= <input id="myNum03" type=number value=1> m= <input id="myNum04" type=number value=1> <br> <br>
+<input type=button value="convert ft to m" onClick="ftM()"> <input type=button value="convert m to ft" onClick="mFt()">
+</div>
+
+<br>
+<div class="d5">
+BMI calculator (see your Body Mass Index)<br>
+your weight (kg) = <input id="myNum01" type=number value=50 style="width:9%"> <br>
+your height (m) = <input id="myNum02" type=number value=1.70 style="width:11%"><br>
+<input type=button value=BMI onClick="{
+	BMI()
+}"><br>
+<br>
+your BMI is <span id="mySpan03">....</span><br>
+<span id="mySpan04"></span>
+</div>
+</body>
