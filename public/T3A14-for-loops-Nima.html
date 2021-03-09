@@ -28,12 +28,42 @@ If you click this loop changing color every other number: <input type=button val
 		myTemp01 += 'Loop Number: ' + myLoop01 + '<br>' ;
 		}
 	else {
-		myTemp01 += 'whats up?' + myLoop01 + '<br>'
+		myTemp01 += myLoop01 + 'whats up?' + '<br>'
 	}
 	}
 	document.getElementById('mySpan01').innerHTML = myTemp01
 }"><br>
+Select a topic 
+<select id="mySelect01">
+<option value="null">--Choose--</option>
+<option value="cars">Car Brands</option>
+<option value="sport">Sports</option>
+<option value="res">Restaurants</option>
+<option value="country">First world countries</option>
+<option value="web">Online Shopping Website</option>
+</select><br>
+<input type=button value="submit" onClick="{
+	select = document.getElementById('mySelect01')
+	choice = select.value
+	myD = '';
+	myCars = ['Ford', 'Toyota', 'Honda', 'Chevrolet', 'Hyudai', 'Ram', 'GMC', 'Nissan', 'Kia', 'Mazda'];
+	myC = ['me', 'you'];
+	if (choice == 'cars') {
+		for(myLoop02=0; myLoop02 < myCars.length; myLoop02++) {
+			myD +=  myCars[myLoop02] + '<br>'
+		}
+		document.getElementById('mySpan01').innerHTML = myD
+	}
+	if (choice == 'null') {
+		for(myLoop03=0; myLoop03 < myC.length; myLoop03++) {
+			myD +=  myC[myLoop03] + '<br>'
+		}
+		document.getElementById('mySpan01').innerHTML = myD
+	}
+}">
+
 
 <br><br>
 
 <span id="mySpan01">....</span>
+<span id="mySpan02">....</span>
