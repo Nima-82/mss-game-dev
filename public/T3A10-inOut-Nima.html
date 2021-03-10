@@ -1,10 +1,25 @@
-<h1 align=center>T3A10-inOut-Nima</h1>
+<style>
+ol {
+	border: 2px solid black;
+	outline: yellow solid 10px;  
+	padding: 20px;
+	width:500
+}
+div {
+	border: 2px solid red;  
+	padding: 20px;
+	width:500;
+	background:#5222
+}
 
+</style>
+<h1 align=center style="background:#999">T3A10-inOut-Nima</h1>
 
+<div>
 Span output: <span id="mySpan01">...</span><br>
 
-Store this variable into x: <input id="myText01" type=text value=3><br>
-Go in order
+Store this variable into x: <input id="myText01" type=text value=3>
+</div>
 <ol>
  
 <li> Run to see the value of x <input type=button value="x value" onClick="{
@@ -34,12 +49,12 @@ Go in order
 <li>Run to see x * 12 / 2: <input type=button value="calculate" onClick="{
 	xResult02 =  (x * 12) /2
 	x = document.getElementById('myText01').value
-	document.getElementById('mySpan01').innerHTML = '((x + x)/x) * x = ' + xResult02
+	document.getElementById('mySpan01').innerHTML = 'x * 12 / 2 = ' + xResult02
 }">
 <li>Run to see 2 * &#8730 x : <input type=button value="calculate" onClick="{
 	xResult03 =  2 * Math.sqrt(x)
 	x = document.getElementById('myText01').value
-	document.getElementById('mySpan01').innerHTML = '((x + x)/x) * x = ' + xResult03
+	document.getElementById('mySpan01').innerHTML = '2 * &#8730 x = ' + xResult03
 }">
 <li>Run to see (2 * &#8730 x)&#179; / x : <input type=button value="calculate" onClick="{
 	xResult04 = ((2 * Math.sqrt(x)) * (2 * Math.sqrt(x)) * (2 * Math.sqrt(x))) / x
