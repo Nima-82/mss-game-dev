@@ -33,33 +33,62 @@ If you click this loop changing color every other number: <input type=button val
 	}
 	document.getElementById('mySpan01').innerHTML = myTemp01
 }"><br>
+
+<input type=button value="show x" onClick="{
+	let myTemp01 = '';
+	x = document.getElementById('myText01').value
+	for(let myLoop01=1; myLoop01 <= x; myLoop01++){
+		if (myLoop01 % 2 == 0) {
+		myTemp01 += '*****'	
+		}
+	myTemp01 += 'Loop Number: ' + myLoop01;
+	if (myLoop01 % 2 == 0) {
+		myTemp01 += '******'
+	}
+	myTemp01 += '<br>'
+	}
+	document.getElementById('mySpan01').innerHTML = myTemp01
+}"><br>
+even numbers are <b>bold</b>: <input type=button value="show x" onClick="{
+	let myTemp01 = '';
+	x = document.getElementById('myText01').value
+	for(let myLoop05=1; myLoop05 <= x; myLoop05++){
+		if (myLoop05 % 2 == 0) {
+		myTemp01 += '<b>Loop Number: </b>' + myLoop05 + '<br>' ;
+		}
+		else {
+			myTemp01 += 'Loop Number: ' + myLoop05 + '<br>' ;
+		}
+
+	}
+	document.getElementById('mySpan01').innerHTML = myTemp01
+}"><br>
 Select a topic 
 <select id="mySelect01">
 <option value="null">--Choose--</option>
 <option value="cars">Car Brands</option>
 <option value="sport">Sports</option>
-<option value="res">Restaurants</option>
-<option value="country">First world countries</option>
-<option value="web">Online Shopping Website</option>
 </select><br>
 <input type=button value="submit" onClick="{
 	select = document.getElementById('mySelect01')
 	choice = select.value
 	myD = '';
 	myCars = ['Ford', 'Toyota', 'Honda', 'Chevrolet', 'Hyudai', 'Ram', 'GMC', 'Nissan', 'Kia', 'Mazda'];
-	myC = ['me', 'you'];
+	mySport = ['Soccer/football', 'Badminton', 'Field Hockey', 'Volleyball', 'Basketball', 'Tennis', 'Cricket', 'Table Tennis'];
+	
 	if (choice == 'cars') {
 		for(myLoop02=0; myLoop02 < myCars.length; myLoop02++) {
 			myD +=  myCars[myLoop02] + '<br>'
 		}
 		document.getElementById('mySpan01').innerHTML = myD
 	}
-	if (choice == 'null') {
-		for(myLoop03=0; myLoop03 < myC.length; myLoop03++) {
-			myD +=  myC[myLoop03] + '<br>'
+	if (choice == 'sport') {
+		for(myLoop03=0; myLoop03 < mySport.length; myLoop03++) {
+			myD +=  mySport[myLoop03] + '<br>'
 		}
 		document.getElementById('mySpan01').innerHTML = myD
 	}
+
 }">
 
 
@@ -67,5 +96,3 @@ Select a topic
 
 <span id="mySpan01">....</span>
 <span id="mySpan02">....</span>
-<br>
-<b>NOT FINISHED</b>
