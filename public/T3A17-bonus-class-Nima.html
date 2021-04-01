@@ -1,0 +1,63 @@
+Version 0.1.3
+
+
+<h1 align=center>T3A17-bonus-class-Nima</h1>
+
+Enter an age into the class: <input id="myText01" type=text value=17 ><br><br>
+
+<input id="myButton131" type="button" value="Make a class myAnimal and run the method myShow()" onclick="{
+
+class myAnimal {
+    constructor(passName, passAge) {
+       this.myName = passName;
+       this.myAge = passAge;
+    }
+    myShow(){
+       document.getElementById('myDiv131').innerHTML = 'Hello '+ this.myName + ' your age is ' + this.myAge
+    }
+ }  // end class myAnimal
+                                                             
+                                             
+   myPet = new myAnimal('Fluffy', 14)
+   myPet.myShow()                                                                           
+}"><br><br>
+
+<input id="myButton132" type="button" value="Make a class myAnimal01 and run the method myShow()" onclick="{
+
+class myAnimal01 {
+    constructor(passName01, passAge01) {
+       this.myName01 = passName01;
+       this.myAge01 = passAge01;
+    }
+    myShow01(){
+       document.getElementById('myDiv131').innerHTML = 'Hello '+ this.myName01 + ' your age is ' + this.myAge01
+    }
+ }  // end class myAnimal
+                                                             
+   x = document.getElementById('myText01').value
+                                          
+   myPet = new myAnimal01('Fluffy', x)
+   myPet.myShow01()                                                                           
+}"><br><br>
+
+Name: <input id="mytext02" type=text value="Jessy"> Age: <input id="myNum01" type=number value=9> <br>
+<br>
+<input type=button value="Make a class with the name and age you submitted" onClick="{
+	class myAnimal02 {
+		constructor(name, age){
+			this.myName02 = name;
+			this.myAge02 = age;
+		}
+	myShow02() {
+			 document.getElementById('myDiv131').innerHTML = 'Hello ' + this.myName02 + ' your age is: ' + this.myAge02
+		}
+	}
+	
+	myX = document.getElementById('mytext02').value
+	myY = document.getElementById('myNum01').value
+	
+	myPet01 = new myAnimal02(myX, myY)
+	myPet01.myShow02()
+}">
+
+<div id='myDiv131'>...</div><br>
