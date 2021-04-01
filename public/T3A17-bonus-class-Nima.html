@@ -1,27 +1,47 @@
-Version 0.1.3
+<body>
 
+Version 0.1.9
+<br><br>
 
-<h1 align=center>T3A17-bonus-class-Nima</h1>
+<h1 align=center style="background:#999; margin:-9">T3A17-bonus-class-Nima</h1>
+<br>
+<br>
 
-Enter an age into the class: <input id="myText01" type=text value=17 ><br><br>
+<style>
+.d1 {
+	border: 2px solid Blue;
+	outline: red solid 10px;
+	padding: 5px;
+ 	text-align: left;
+	width: 500;
+	background-color: #2001;
+}
 
-<input id="myButton131" type="button" value="Make a class myAnimal and run the method myShow()" onclick="{
+.d2{
+	outline: grey solid 10px;
+	width: 500;
+	padding: 5px
+}
 
-class myAnimal {
-    constructor(passName, passAge) {
-       this.myName = passName;
-       this.myAge = passAge;
-    }
-    myShow(){
-       document.getElementById('myDiv131').innerHTML = 'Hello '+ this.myName + ' your age is ' + this.myAge
-    }
- }  // end class myAnimal
-                                                             
-                                             
-   myPet = new myAnimal('Fluffy', 14)
-   myPet.myShow()                                                                           
-}"><br><br>
+.d3 {
+	border: 2px solid black;
+	outline: yellow solid 10px;
+	padding: 5px;
+	width: 500;
+	background-color: #1485
+}
 
+.d4 {
+	border: 2px solid orange;
+	padding: 8px;
+	background-color: #1175;
+	width: 500;
+}
+
+</style>
+
+<div class="d1">
+Enter an age into the class: <input id="myText01" type=number value=17 ><br><br>
 <input id="myButton132" type="button" value="Make a class myAnimal01 and run the method myShow()" onclick="{
 
 class myAnimal01 {
@@ -38,11 +58,35 @@ class myAnimal01 {
                                           
    myPet = new myAnimal01('Fluffy', x)
    myPet.myShow01()                                                                           
-}"><br><br>
+}">
+<br><br>
+</div>
+<br><br>
 
+<div class="d2">
+<input id="myButton131" type="button" value="Make a class myAnimal and run the method myShow()" onclick="{
+
+class myAnimal {
+    constructor(passName, passAge) {
+       this.myName = passName;
+       this.myAge = passAge;
+    }
+    myShow(){
+       document.getElementById('myDiv131').innerHTML = 'Hello '+ this.myName + ' your age is ' + this.myAge
+    }
+ }  // end class myAnimal
+                                                             
+                                             
+   myPet = new myAnimal('Fluffy', 14)
+   myPet.myShow()                                                                           
+}">
+</div>
+<br><br>
+
+<div class="d3">
 Name: <input id="mytext02" type=text value="Jessy"> Age: <input id="myNum01" type=number value=9> <br>
 <br>
-<input type=button value="Make a class with the name and age you submitted" onClick="{
+<input type=button value="Make a class with the name and age that you submitted" onClick="{
 	class myAnimal02 {
 		constructor(name, age){
 			this.myName02 = name;
@@ -58,6 +102,8 @@ Name: <input id="mytext02" type=text value="Jessy"> Age: <input id="myNum01" typ
 	
 	myPet01 = new myAnimal02(myX, myY)
 	myPet01.myShow02()
-}">
-
-<div id='myDiv131'>...</div><br>
+}"><br>
+</div>
+<br><br>
+<div id='myDiv131' class=d4>...</div><br>
+</body>
