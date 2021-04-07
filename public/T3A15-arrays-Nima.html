@@ -1,16 +1,49 @@
+Version 0.1.7
+
 <h1 align=center>T3A15-Ararrays-Nima</h1>
 
-<input id="myText01" type=text value=3> <br><br>
+<input id="myNum01" type=number value=3> <br><br>
+<input type=button value="Submit" onClick="{
+	myTemp = ''
+	y = document.getElementById('myNum01').value
+	for (myLoop=0; myLoop<y; myLoop++){
+		myTemp = 'array value: ' + myLoop + ',is: ' + document.myArray[myLoop]
+	}
+	myTemp = document.getElementById('mySpan01').innerHTML
+	document.myArray = new Array();
+	document.myArray[0] = 7;
+	document.myArray[1] = 3;
+	document.myArray[2] = 8;
+	document.myArray[3] = 25;
+	document.myArray[4] = 65;
+	document.myArray[5] = 89;
+}"> <br><br>
 
-<input type=button value="Make and Show Arrays" onClick="{
+<input type=button value="Make and Show an Array" onClick="{
 	document.myArray = new Array()
 	document.myArray[0] = 7;
 	document.myArray[1] = 3;
 	document.myArray[2] = 8;
+	document.myArray[3] = 25;
+	document.myArray[4] = 65;
+	document.myArray[5] = 89;
 
 	document.getElementById('mySpan01').innerHTML = '[1] array is: ' + document.myArray[1]
 }"> <br><br>
 
+<input type=button value="Make and Show all Arrays" onClick="{
+	document.myArray = new Array()
+	document.myArray[0] = 7;
+	document.myArray[1] = 3;
+	document.myArray[2] = 8;
+	document.myArray[3] = 25;
+	document.myArray[4] = 65;
+	document.myArray[5] = 89;
+
+	document.getElementById('mySpan01').innerHTML = 'array [0] is: ' + document.myArray[0] + '<br>'
+	document.getElementById('mySpan01').innerHTML += 'array [1] is: ' + document.myArray[1] + '<br>'
+	document.getElementById('mySpan01').innerHTML += 'array [2] is: ' + document.myArray[2] + '<br>'
+}"> <br><br>
 
 <input type=button value="Loop through Arrays" onClick="{
 	myTemp = ''
@@ -22,4 +55,9 @@
 	document.getElementById('mySpan01').innerHTML = myTemp
 }"> <br><br>
 
+<input type=button value="show two random students' name" onClick="{
+	var student = ['Kevin', 'Ann', 'John'];
+	document.getElementById('mySpan01').innerHTML = student[0] + '<br>';
+	document.getElementById('mySpan01').innerHTML += student[1] + '<br>';
+}"><br><br>
 <span id=mySpan01>.....</span><br>
