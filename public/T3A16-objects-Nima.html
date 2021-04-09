@@ -1,4 +1,4 @@
-Version 0.1.5
+Version 0.1.6
 <h1 align=center>T3A16-objects-Nima.html</h1>
 Enter an age into the object: <input id="myText01" type=number value=17 ><br>
 Enter your age: <input type="button" value="Submit" onClick="{
@@ -68,12 +68,12 @@ Enter your eye colour: <input id="myText09" type=text Value="Brown"> <br>
 	v1 = document.getElementById('myText09').value
 	let myObject5 = {
 		firstname3: x2 ,
-		lastname1: z1
-		colour: y2
+		lastname1: z1 ,
+		colour: v1 ,
 	}
 	document.getElementById('mySpan01').innerHTML = 'your first name is ' + '<b>' + myObject5['firstname3'] + '</b>' + '<br>'
-	document.getElementById('mySpan01').innerHTML += 'your lastname is ' + '<b>' +myObject5[lastname1] + '</b>' + '<br>'
-	document.getElementById('mySpan01').innerHTML += 'your eyeColour is ' + '<b>' +myObject5[colour] + '</b>'
+	document.getElementById('mySpan01').innerHTML += 'your lastname is ' + '<b>' +myObject5['lastname1'] + '</b>' + '<br>'
+	document.getElementById('mySpan01').innerHTML += 'your eyeColour is ' + '<b>' +myObject5.colour + '</b>'
 }"><br><br>
 
 <span id="mySpan01">...</span>
