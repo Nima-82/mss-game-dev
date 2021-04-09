@@ -1,82 +1,119 @@
-<body style="background=#3455">
+Version 0.2.3
 
-Version 0.1.7
-<h1 align=center>T3A16-objects-Nima.html</h1>
-Enter an age into the object: <input id="myText01" type=number value=17 ><br>
-Enter your age: <input type="button" value="Submit" onClick="{
+<style>
+.d {
+	border: 2px solid black;
+	outline: blue solid 10px;
+	padding: 5px;
+	background-color: #1433;
+	width: 500
+}
+
+.d1 {
+	border: 2px solid Blue;
+	outline: red solid 10px;
+	padding: 5px;
+ 	text-align: left;
+	width: 500;
+	background-color: #2001;
+}
+
+.d2{
+	outline: grey solid 10px;
+	width: 500;
+	padding: 5px
+}
+
+.d3 {
+	border: 2px solid black;
+	outline: yellow solid 10px;
+	padding: 5px;
+	width: 500;
+	background-color: #1485
+}
+
+.d4 {
+	border: 2px solid orange;
+	padding: 8px;
+	background-color: #1175;
+	width: 500;
+}
+
+.d5 {
+	width: 500;
+	border: 2px solid purple;
+	background: pink;
+	padding: 8px
+}
+
+</style>
+<body style="#3056">
+<h1 align=center>T3A15-Ararrays-Nima</h1>
+<div class=d>
+insert a number: <input id="myText01" type=number value=3><br><br>
+<input type=button value="Submit" onClick="{
+	document.myArray = new Array()
+	document.myArray[0] = 7;
+	document.myArray[1] = 3;
+	document.myArray[2] = 8;
+	document.myArray[3] = 25;
+	document.myArray[4] = 65;
+	document.myArray[5] = 89;
+	let myTemp01 = '';
 	x = document.getElementById('myText01').value
-	let myObject1 = {
-		'firstname1': 'Jerry',
-		'age1': x
+	for(let myLoop01=1; myLoop01 <= x; myLoop01++){
+		myTemp01 += 'Array value: ' + myLoop01 + ' is ' + document.myArray[myLoop01] + '<br>';
 	}
-	document.getElementById('mySpan01').innerHTML = 'first name is ' + myObject1.firstname1 + '<br>'
-	document.getElementById('mySpan01').innerHTML += 'age is ' + myObject1.age1
+	document.getElementById('mySpan01').innerHTML = myTemp01
 }">
-<br><br>
-<input type=button value="Make and Show the defult Object" onclick="{ 
-	let myObject = {
-		'firstName': 'John',
-		'age': 6
+</div><br><br>
+<div class=d1>
+<input type=button value="Make and Show an Array" onClick="{
+	document.myArray = new Array()
+	document.myArray[0] = 7;
+	document.myArray[1] = 3;
+	document.myArray[2] = 8;
+	document.myArray[3] = 25;
+	document.myArray[4] = 65;
+	document.myArray[5] = 89;
+
+	document.getElementById('mySpan01').innerHTML = '[1] array is: ' + document.myArray[1]
+}">
+</div> <br><br>
+<div class=d5>
+<input type=button value="Make and Show all Arrays" onClick="{
+	document.myArray = new Array()
+	document.myArray[0] = 7;
+	document.myArray[1] = 3;
+	document.myArray[2] = 8;
+	document.myArray[3] = 25;
+	document.myArray[4] = 65;
+	document.myArray[5] = 89;
+
+	document.getElementById('mySpan01').innerHTML = 'array [0] is: ' + document.myArray[0] + '<br>'
+	document.getElementById('mySpan01').innerHTML += 'array [1] is: ' + document.myArray[1] + '<br>'
+	document.getElementById('mySpan01').innerHTML += 'array [2] is: ' + document.myArray[2] + '<br>'
+}"> 
+</div><br><br>
+<div class=d2>
+<input type=button value="Loop through Arrays" onClick="{
+	myTemp = ''
+	for (i=0; i<6 ; i++){
+		myTemp += 'Array value: ' + i + ' ,is: ' + document.myArray[i] + '<br>'
 	}
-document.getElementById('mySpan01').innerHTML = 'myobject.firstName: ' + myObject.firstName + '<br>'
-document.getElementById('mySpan01').innerHTML += 'myobject.age: ' + myObject.age
-}"><br><br>
-
-Enter your name: <input id="myText02" type=text Value="Nima"> <br>
-<input type=button value="submit" onClick="{
-	y = document.getElementById('myText02').value
-	let myObject2 = {
-		'firstname2': y ,
-		'age2': 18
-	}
-	document.getElementById('mySpan01').innerHTML = 'your first name is ' + myObject2['firstname2'] + '<br>'
-	document.getElementById('mySpan01').innerHTML += 'your age is ' + myObject2.age2
-}"> <br><br>
 
 
-Enter your name: <input id="myText03" type=text Value="Nima"> <br>
-Enter your age into the object: <input id="myText04" type=number value=17 ><br>
-<input type=button value="submit" onClick="{
-	x1 = document.getElementById('myText03').value
-	y1 = document.getElementById('myText04').value
-	let myObject3 = {
-		firstname3: y1 ,
-		'age3': x1
-	}
-	document.getElementById('mySpan01').innerHTML = 'your first name is ' + myObject3['firstname3'] + '<br>'
-	document.getElementById('mySpan01').innerHTML += 'your age is ' + myObject3.age3
-}"> <br><br>
-
-Enter your lastname: <input id="myText05" type=text Value="Smith"> <br>
-Enter your eye colour: <input id="myText06" type=text Value="Brown"> <br>
-<input type=button value="submit" onClick="{
-	v = document.getElementById('myText05').value
-	z = document.getElementById('myText06').value
-	let myObject4 = {
-		lastname: v ,
-		'colour': z
-	}
-	document.getElementById('mySpan01').innerHTML = 'your first name is ' + '<b>' + myObject4['lastname'] + '</b>' + '<br>'
-	document.getElementById('mySpan01').innerHTML += 'your eyeColour is ' + '<b>' +myObject4.colour + '</b>'
-}"><br><br>
-
-Enter your name: <input id="myText07" type=text Value="Nima"> <br>
-Enter your lastname: <input id="myText08" type=text Value="Smith"> <br>
-Enter your eye colour: <input id="myText09" type=text Value="Brown"> <br>
-
-<input type=button value="submit" onClick="{
-	x2 = document.getElementById('myText07').value
-	z1 = document.getElementById('myText08').value
-	v1 = document.getElementById('myText09').value
-	let myObject5 = {
-		firstname3: x2 ,
-		lastname1: z1 ,
-		colour: v1 ,
-	}
-	document.getElementById('mySpan01').innerHTML = 'your first name is ' + '<b>' + myObject5['firstname3'] + '</b>' + '<br>'
-	document.getElementById('mySpan01').innerHTML += 'your lastname is ' + '<b>' +myObject5['lastname1'] + '</b>' + '<br>'
-	document.getElementById('mySpan01').innerHTML += 'your eyeColour is ' + '<b>' +myObject5.colour + '</b>'
-}"><br><br>
-
-<span id="mySpan01">...</span>
+	document.getElementById('mySpan01').innerHTML = myTemp
+}"> 
+</div><br><br>
+<div class=d3>
+<input type=button value="show two random students' name" onClick="{
+	var student = ['Kevin', 'Ann', 'John'];
+	document.getElementById('mySpan01').innerHTML = student[0] + '<br>';
+	document.getElementById('mySpan01').innerHTML += student[1] + '<br>';
+}">
+</div><br><br>
+<div class=d4>
+<span id=mySpan01>.....</span><br>
+</div>
 </body>
