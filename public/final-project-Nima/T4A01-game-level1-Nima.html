@@ -59,7 +59,8 @@ function myCheckAll() {
 
 	if(myHitOther('mySpan01', 'mySpan02')){
 		document.getElementById('myS01').innerHTML = '<b>HIT</b>'
-		alert('You Win')
+		//alert('You Win')
+		
 		location = 'file:///C:/Users/2379402/OneDrive%20-%20SCHOOL%20DIST%2075%20(MISSION)/g11-nima-pouria-mehr-game-dev-markin/public/final-project-Nima/T4A01-game-level1-Nima.html'
 	} else {
 		document.getElementById('myS01').innerHTML = ' '
@@ -73,6 +74,7 @@ function myYAuto() {
 
 function myXAuto() {
 	document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
+	myCheckAll()
 }
 
 </script>
@@ -83,7 +85,8 @@ function myXAuto() {
 	let myAlphaKey = event.key
 	document.getElementById('myDiv01').innerHTML = 'You typed: ' + myAlphaKey.toLowerCase()
 	if (myAlphaKey.toLowerCase() == 'arrowright' || myAlphaKey.toLowerCase() == 'd') {
-		document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 15
+		clearInterval(document.myXtimer)
+		document.myYtimer = setInterval( myXAuto , document.myXspeed);
 	}
 	myCheckAll()
 }">
@@ -112,8 +115,8 @@ function myXAuto() {
 	myCheckAll()
 
 }"></td> <td></td> <td><input type=button value="&#8594" onClick="{
-	document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 15
-	myCheckAll()
+	clearInterval(document.myXtimer)
+	document.myYtimer = setInterval( myXAuto , document.myXspeed);
 }"></td>
 </tr>
 <tr align=center>
