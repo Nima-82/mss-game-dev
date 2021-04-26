@@ -32,6 +32,31 @@ function myHitOther(my1,my2){
 }
 
 function myCheckAll() {
+	
+	
+	if (parseInt(document.getElementById('mySpan02').style.top) < 100 ) {
+		document.myYmove = document.myYmove * -1
+	}
+	
+	if (parseInt(document.getElementById('mySpan02').style.top) > 710) {
+		document.myXmove = document.myXmove * -1
+	}
+
+	
+
+	// end of bounce code
+
+
+	if (myHitOther('mySpan02', 'mySpan03')) {
+		document.myYmove = document.myYmove * -1
+	}
+	
+	if (myHitOther('mySpan02', 'mySpan04')) {
+		document.myYmove = document.myYmove * -1
+	}
+	
+
+
 	if(myHitOther('mySpan01', 'mySpan02')){
 		document.getElementById('myS01').innerHTML = '<b>HIT</b>'
 		alert('You Win')
@@ -41,8 +66,14 @@ function myCheckAll() {
 	}
 }
 
+function myYAuto() {
+	document.getElementById('mySpan02').style.top = parseInt(document.getElementById('mySpan02').style.top) + document.myYmove
+	myCheckAll()
+}
 
-
+function myXAuto() {
+	document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
+}
 
 </script>
 </head>
@@ -97,11 +128,15 @@ function myCheckAll() {
 
 </table>
 
+<input type=button value=START onClick="{
+	clearInterval(document.myYtimer)
+	document.myYtimer = setInterval( myYAuto , document.myYspeed);
+}">
 
 <span id="mySpan01" style="position:absolute; left:100; top:385; width:150; height:33;"><image id="myIm01" src="missile01.gif" width=150 height=33></image></span>
 <span id="mySpan02" style="position:absolute; left:700; top:355; width:123; height:155;"><image src="target.gif" width=123 height=155></span>
 <span id="mySpan03" style="position:absolute; left:700; top:100; width:123; height:155;">HHH</span>
-<span id="mySpan03" style="position:absolute; left:700; top:710; width:123; height:155;">HHH</span>
+<span id="mySpan04" style="position:absolute; left:700; top:710; width:123; height:155;">HHH</span>
 <div id="myDiv01">...</div>
 
 
