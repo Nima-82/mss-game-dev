@@ -4,12 +4,15 @@
 
 document.myXmove = 5   // amount it moves in pixels
 document.myYmove = 7
+document.myYmove1 = 6
 
 document.myXspeed = 15 // speed as a delay in milliseconds bigger is slower
 document.myYspeed = 20 
+document.myYspeed1 = 20
 
 document.myXtimer = 0;
 document.myYtimer = 0;
+document.myYtimer1 = 0;
 
 
 
@@ -34,7 +37,7 @@ function myHitOther(my1,my2){
 function myCheckAll() {
 	
 	
-	if (parseInt(document.getElementById('mySpan02').style.top) < 60 ) {
+	if (parseInt(document.getElementById('mySpan02').style.top) < 100 ) {
 		document.myYmove = document.myYmove * -1
 	}
 	
@@ -54,6 +57,16 @@ function myCheckAll() {
 	if (myHitOther('mySpan02', 'mySpan04')) {
 		document.myYmove = document.myYmove * -1
 	}
+
+   // end of first one
+
+	if (myHitOther('mySpan05', 'mySpan06')) {
+		document.myYmove1 = document.myYmove1 * -1
+	}
+	
+	if (myHitOther('mySpan05', 'mySpan07')) {
+		document.myYmove1 = document.myYmove1 * -1
+	}
 	
 
 
@@ -61,7 +74,13 @@ function myCheckAll() {
 		document.getElementById('myS01').innerHTML = '<b>HIT</b>'
 		//alert('You Win')
 		
-		location = 'https://nima-82.github.io/mss-game-dev/public/final-project-Nima/T4A01-game-level1-Nima.html'
+		location = 'file:///C:/Users/nimad/OneDrive%20-%20SCHOOL%20DIST%2075%20(MISSION)/g11-nima-pouria-mehr-game-dev-markin/public/final-project-Nima/T4A01-game-level1-Nima.html'
+	} 
+	if(myHitOther('mySpan01', 'mySpan05')){
+		document.getElementById('myS01').innerHTML = '<b>HIT</b>'
+		//alert('You loose')
+		
+		location = 'file:///C:/Users/nimad/OneDrive%20-%20SCHOOL%20DIST%2075%20(MISSION)/g11-nima-pouria-mehr-game-dev-markin/public/final-project-Nima/T4A01-game-level1-Nima.html'
 	} else {
 		document.getElementById('myS01').innerHTML = ' '
 	}
@@ -69,6 +88,11 @@ function myCheckAll() {
 
 function myYAuto() {
 	document.getElementById('mySpan02').style.top = parseInt(document.getElementById('mySpan02').style.top) + document.myYmove
+	myCheckAll()
+}
+
+function myYAuto2() {
+	document.getElementById('mySpan05').style.top = parseInt(document.getElementById('mySpan05').style.top) + document.myYmove1
 	myCheckAll()
 }
 
@@ -132,14 +156,20 @@ function myXAuto() {
 </table>
 
 <input type=button value=START onClick="{
-	clearInterval(document.myYtimer)
-	document.myYtimer = setInterval( myYAuto , document.myYspeed);
+	//clearInterval(document.myYtimer)
+	//document.myYtimer = setInterval( myYAuto , document.myYspeed);
+	
+	clearInterval(document.myYtimer1)
+	document.myYtimer1 = setInterval( myYAuto2 , document.myYspeed1);
 }">
 
-<span id="mySpan01" style="position:absolute; left:100; top:385; width:150; height:33;"><image id="myIm01" src="missile01.gif" width=150 height=33></image></span>
-<span id="mySpan02" style="position:absolute; left:700; top:355; width:123; height:155;"><image src="target.gif" width=123 height=155></span>
-<span id="mySpan03" style="position:absolute; left:700; top:60; width:123; height:155;">HHH</span>
-<span id="mySpan04" style="position:absolute; left:700; top:710; width:123; height:155;">HHH</span>
+<span id="mySpan01" style="position:absolute; left:100; top:570; width:150; height:33;"><image id="myIm01" src="missile01.gif" width=150 height=33></image></span>
+<span id="mySpan02" style="position:absolute; left:1400; top:570; width:123; height:155;"><image src="targetT.gif" width=123 height=155></span>
+<span id="mySpan05" style="position:absolute; left:700; top:355; width:123; height:155;"><image src="man.gif" width=123 height=155></span>
+<span id="mySpan06" style="position:absolute; left:700; top:60; width:123; height:55;">DDD</span>
+<span id="mySpan07" style="position:absolute; left:700; top:1100; width:123; height:155;">DDD</span>
+<span id="mySpan03" style="position:absolute; left:1400; top:60; width:123;">HH</span>
+<span id="mySpan04" style="position:absolute; left:1400; top:1100; width:123;">HHH</span>
 <div id="myDiv01">...</div>
 
 
