@@ -156,10 +156,10 @@ function myXAuto() {
 </table>
 
 <input type=button value=START onClick="{
-	//clearInterval(document.myYtimer)
-	//document.myYtimer = setInterval( myYAuto , document.myYspeed);
+	clearInterval(document.myYtimer)
+	document.myYtimer = setInterval( myYAuto , document.myYspeed);
 	
-	clearInterval(document.myYtimer1)
+	//clearInterval(document.myYtimer)
 	document.myYtimer1 = setInterval( myYAuto2 , document.myYspeed1);
 }">
 
