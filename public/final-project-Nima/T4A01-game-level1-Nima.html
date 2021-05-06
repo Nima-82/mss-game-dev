@@ -1,4 +1,4 @@
-version 1.0.1
+
 <head>
 <script>
 
@@ -63,19 +63,34 @@ function myCheckAll() {
 		document.myYmove1 = document.myYmove1 * -1
 	}
 	
-	
+	if (parseInt(document.getElementById('mySpan01').style.left) >= 1450) {
+		location = 'file:///C:/Users/2379402/OneDrive%20-%20SCHOOL%20DIST%2075%20(MISSION)/g11-nima-pouria-mehr-game-dev-markin/public/final-project-Nima/T4A01-game-level1-Nima.html'
+	}
 
 	if(myHitOther('mySpan01', 'mySpan02')){
+		document.myXmove = 0;
+		document.myXspeed = 0;
+		document.myYmove = 0;
+		document.myYspeed = 0;
+		document.myYmove1 = 0;
+		document.myYspeed1 = 0;
 		document.getElementById('myS01').innerHTML = '<b>HIT</b>'
+
 		//alert('You Win')
-		
-		location = 'https://nima-82.github.io/mss-game-dev/public/final-project-Nima/T4A01-game-level1-Nima.html'
+		location = 'file:///C:/Users/2379402/OneDrive%20-%20SCHOOL%20DIST%2075%20(MISSION)/g11-nima-pouria-mehr-game-dev-markin/public/final-project-Nima/T4A01-game-level1-Nima.html'
 	} 
 	if(myHitOther('mySpan01', 'mySpan05')){
-		document.getElementById('myS01').innerHTML = '<b>HIT</b>'
-		//alert('You loose')
 		
-		location = 'https://nima-82.github.io/mss-game-dev/public/final-project-Nima/T4A01-game-level1-Nima.html'
+		document.getElementById('myS01').innerHTML = '<b>HIT</b>'
+		document.myXmove = 0;
+		document.myXspeed = 0;
+		document.myYmove = 0;
+		document.myYspeed = 0;
+		document.myYmove1 = 0;
+		document.myYspeed1 = 0;
+
+		location = 'file:///C:/Users/2379402/OneDrive%20-%20SCHOOL%20DIST%2075%20(MISSION)/g11-nima-pouria-mehr-game-dev-markin/public/final-project-Nima/T4A01-game-level1-Nima.html'
+		//alert('You lost')
 	} else {
 		document.getElementById('myS01').innerHTML = ' '
 	}
