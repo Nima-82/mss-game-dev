@@ -9,7 +9,12 @@ canvas{
 </style>
 
 <h1 align=center style="background:#999">T4A2-game-level2-Nima</h1> 
+
+
+USE <b style="color:red">ARROW KEYS</b> OR <b style="color:red">WASD</b> TO MOVE THE SNAKE
+
 <br><br>
+
     </head>
     <canvas id="snake" width="608" height="608"></canvas>
 <script>
@@ -17,10 +22,10 @@ canvas{
 const cvs = document.getElementById("snake");
 const ctx = cvs.getContext("2d");
 
-// create the unit
+// the unit
 const box = 32;
 
-// load images
+//images
 
 const ground = new Image();
 ground.src = "img/ground.png";
@@ -28,7 +33,7 @@ ground.src = "img/ground.png";
 const foodImg = new Image();
 foodImg.src = "img/food.png";
 
-// load audio files
+//audio files
 
 let dead = new Audio();
 let eat = new Audio();
@@ -53,14 +58,14 @@ snake[0] = {
     y : 10 * box
 };
 
-// create the food
+//food
 
 let food = {
     x : Math.floor(Math.random()*17+1) * box,
     y : Math.floor(Math.random()*15+3) * box
 }
 
-// create the score var
+//score var
 
 let score = 0;
 
@@ -87,7 +92,7 @@ function direction(event){
     }
 }
 
-// cheack collision function
+//collision function
 function collision(head,array){
     for(let i = 0; i < array.length; i++){
         if(head.x == array[i].x && head.y == array[i].y){
@@ -162,6 +167,7 @@ function draw(){
 // call draw function every 100 ms
 
 let game = setInterval(draw,100);
+
 
 
 </script>
