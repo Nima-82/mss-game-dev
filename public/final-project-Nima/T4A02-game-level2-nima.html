@@ -68,6 +68,7 @@ let food = {
 //score var
 
 let score = 0;
+// let highscore = 0;
 
 //control the snake
 
@@ -109,7 +110,7 @@ function draw(){
     ctx.drawImage(ground,0,0);
     
     for( let i = 0; i < snake.length ; i++){
-        ctx.fillStyle = ( i == 0 )? "green" : "white";
+        ctx.fillStyle = ( i == 0 )? "Turquoise" : "gray";
         ctx.fillRect(snake[i].x,snake[i].y,box,box);
         
         ctx.strokeStyle = "red";
@@ -162,6 +163,7 @@ function draw(){
     ctx.fillStyle = "white";
     ctx.font = "45px Changa one";
     ctx.fillText(score,2*box,1.6*box);
+    //ctx.fillText(highscore,17*box,1.6*box);
 }
 
 // call draw function every 100 ms
